@@ -2900,15 +2900,15 @@ var checkForContractAddress = function(contract, callback){
             count++;
 
             // stop watching after 50 blocks (timeout)
-            if (count > 50) {
+            if (count > 5000) {
 
                 filter.stopWatching(function() {});
                 callbackFired = true;
 
                 if (callback)
-                    callback(new Error('Contract transaction couldn\'t be found after 50 blocks'));
+                    callback(new Error('Contract transaction couldn\'t be found after 5000 blocks'));
                 else
-                    throw new Error('Contract transaction couldn\'t be found after 50 blocks');
+                    throw new Error('Contract transaction couldn\'t be found after 5000 blocks');
 
 
             } else {
